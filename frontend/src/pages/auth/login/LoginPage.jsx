@@ -7,6 +7,7 @@ import { IoMdLogIn } from "react-icons/io";
 
 
 const LoginPage = () => {
+  console.log("Frontend URL is-",import.meta.env.VITE_REACT_APP_BACKEND_BASEURL);
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
@@ -17,7 +18,6 @@ const LoginPage = () => {
 
   const { mutate: loginMutation, isPending, isError, error } = useMutation({
     mutationFn: async ({ username, password }) => {
-      console.log(import.meta.env.VITE_REACT_APP_BACKEND_BASEURL);
       const res = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/auth/login`, {
         method: "POST",
         headers: {
