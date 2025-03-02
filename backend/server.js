@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true })); // to parse form data(urlencode
 app.use(cookieParser());
 
 app.use(cors({
-	origin: [process.env.FRONTEND_URL || "https://snapzy-vercel-client.vercel.app"], // Update with Vercel URL
+	origin: [process.env.FRONTEND_URL, "https://snapzy-vercel-client.vercel.app"], // Update with Vercel URL
 	credentials: true,
 	methods: ["GET", "POST", "PUT", "DELETE"],
 	allowedHeaders: ["Content-Type", "Authorization"]
