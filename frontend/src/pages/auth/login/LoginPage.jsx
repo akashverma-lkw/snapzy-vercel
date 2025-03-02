@@ -17,6 +17,7 @@ const LoginPage = () => {
 
   const { mutate: loginMutation, isPending, isError, error } = useMutation({
     mutationFn: async ({ username, password }) => {
+      console.log(import.meta.env.VITE_REACT_APP_BACKEND_BASEURL);
       const res = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/auth/login`, {
         method: "POST",
         headers: {
